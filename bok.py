@@ -27,6 +27,7 @@ def dup(b,c):
         else:
             x = b.index(i)
             c.pop(x)
+    b = B
     return B
     
 def srtcst(d):
