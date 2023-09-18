@@ -19,8 +19,15 @@ def con(b,c):
         d[i] = w
         j = j+1
 
-def dup(b):
-    return list(dict.fromkeys(b))
+def dup(b,c):
+    B = []
+    for i in b:
+        if i not in B:
+            B.append(i)
+        else:
+            x = b.index(i)
+            c.pop(x)
+    return B
     
 def srtcst(d):
     con(b,c)
@@ -52,7 +59,7 @@ print(w)
 while i <1:
     choice = str(input('Enter your choice:'))
     if choice=='A':
-        print('Lsit without duplicate entries:-',dup(b))
+        print('Lsit without duplicate entries:-',dup(b,c))
     elif choice == 'B':
         print('Asending order:-\n\t',srtcst(d))
     elif choice=='C':
@@ -64,4 +71,3 @@ while i <1:
         continue
     else:
         break
-
