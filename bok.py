@@ -6,7 +6,7 @@ sorted_value_l = []
 
 def getdata():
     n = int(input('Number of Book entries:'))
-    for i in range(0,n):
+    for i in >range(0,n):
         r = input('Name of the book:')
         b.append(r)
         f = input('Cost of the booK:')
@@ -72,3 +72,4 @@ while i <1:
         continue
     else:
         break
+
