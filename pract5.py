@@ -56,7 +56,3 @@ elif chi==5:
     count(l)
 else:
     print('Entered choice number is invalid')
-
-
-
-
