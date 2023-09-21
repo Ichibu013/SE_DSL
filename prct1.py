@@ -65,38 +65,3 @@ elif choice=='C':
     no_foot(A,B,C)
 elif choice == 'D':
     no_cri_bat(A,B,C)
-
-'''
-OUTPUT:-
-Enter the number of Cricket students:2
-Enter the name of Cricket student '1':a
-Enter the name of Cricket student '2':x
-Enter the number of Badmintion students:3
-Enter the name of Badmintion student '1':x
-Enter the name of Badmintion student '2':g
-Enter the name of Badmintion student '3':h
-Enter the number of Football students:4
-Enter the name of Football student '1':a
-Enter the name of Football student '2':g
-Enter the name of Football student '3':j
-Enter the name of Football student '4':k
-Choices:-
-        A]List of students who play both cricket and badminton
-        B]List of students who play either cricket or badminton but not both
-        C]Number of students who play neither cricket nor badminton
-        D]Number of students who play cricket and football but not badminton
-A]
-Enter your choice:A
-        '1'] x
-B]
-Enter your choice:B
-        '1'] a
-        '2'] g
-        '3'] h
-C]
-Enter your choice:C
-Number of sutdents that neither play cricket nor badmintion: 2
-D]
-Enter your choice:D
-Number of students who play cricket and football but not badminton: 3
-'''
