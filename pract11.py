@@ -5,7 +5,7 @@ def getdata(n):
         ele = int(input('Enter the roll number of student:'))
         ary.append(ele)
     global key
-    key = input('Enter the element to be found:')
+    key = int(input('Enter the element to be found:'))
 
 def linearSearch(a,key):
     f = 0 
