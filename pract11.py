@@ -5,7 +5,7 @@ def getdata(n):
         ele = int(input('Enter the roll number of student:'))
         ary.append(ele)
     global key
-    key = int(input('Enter the element to be found:'))
+    key = int(input('Enter the roll no to be searched:'))
 
 def linearSearch(a,key):
     f = 0 
@@ -13,9 +13,9 @@ def linearSearch(a,key):
         if a[i]== key:
             f = f+1
     if f == 0:
-        print('Element not found')
+        print('Student is absent')
     else:
-        print('Element found at',i,'index')
+        print('Student is present ')
 
 def sentinalSearch(ary,n,key):
     last = ary[n-1]
@@ -25,24 +25,83 @@ def sentinalSearch(ary,n,key):
         i+=1
     ary[n-1]=last
     if ((i<n-1) or (ary[n-1]==key)):
-        print('Element found')
+        print('Student is present ')
     else:
-        print('Element not found')
+        print('Student is absent')
 
-def insertSort(ary):
-    for i in range(1,len(ary)):
-        temp = ary[i]
-    for j in range(i,0,-1):
-        if ary[j]<ary[j-1]:
-            ary[j] = ary[j-1]
-            ary[j-1] = temp
+
+def binarySearch(ary,key,n):
+    a = sorted(ary)
+    l = 0
+    r = n-1
+    while l<r:
+        mid = int((l+r)/2)
+        if key>ary[mid]:
+            l = mid+1
+        elif key < ary[mid]:
+            r = mid - 1
+        elif key == ary[mid]:
+            return mid
         else:
-            break
+            return -1
+
+def fibonacciSearch(ary,key,n):
+    fib2 = 1
+    fib1 = 0
+    fib3 = fib1 + fib2
+    while fib3<=n:
+        fib2 = fib1
+        fib1 = fib3
+        fib3 = fib2 + fib1
+        
+    offset = 0
+    
+    while fib3>1:
+        i = min(offset+fib1,n-1)
+        if ary[i] > key:  
+            fib3 = fib2
+            fib2 = fib2 - fib1
+            fib1 = fib3- fib2
+        
+        elif ary[i]< key:
+            fib3 = fib1
+            fib1 = fib2
+            fib2 = fib3 - fib1
+            offset = i
+
+        else:
+            return i
+    if fib1 == 0 and ary[offset+1] == key:
+        return offset+1
+    return -1
+
 
 n = int(input('Enter the number of student that attended training program:'))
 getdata(n)
-print(ary)
-
-linearSearch(ary,key)
-sentinalSearch(ary,n,key)
-
+print('LIST OF CHOICES\n\t1]Search using Linear seacrh\n\t2]Search using Sentinal search')
+print('\t3]Search using Binary search\n\t4]Search using Fibnoacci search')
+while 1>0: 
+    c = int(input('\t\tEnter you choice:'))
+    if c == 1:
+        linearSearch(ary,key)
+    elif c == 2:
+        sentinalSearch(ary,n,key)
+    elif c == 3:
+        r = binarySearch(ary,key,n)
+        if r != -1:
+            print('Student is absent')
+        elif r == -1:
+            print('Student is present ')
+    elif c == 4:
+        r = fibonacciSearch(ary,key,n)
+        if r != -1:
+            print('Student is absent')
+        elif r == -1:
+            print('Student is present')
+    else:
+        print('Entered choice is invalid')
+    co = input('Do you wish to continue(y/n):')
+    if co == 'y':
+        continue
+    else:
+        break
