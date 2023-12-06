@@ -103,11 +103,13 @@ public:
             pre->next = temp->next;
             delete temp;
         }
-    }
-    void reverse() {
-
-    }
+    }
     void concat() {
+    node *head1 = NULL,*head2=NULL;
+    cout<<"FIRST GROUP:"<<endl;
+    insert_president();
+    insert_member();
+    
 
     }
 };
