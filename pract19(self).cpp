@@ -105,12 +105,21 @@ public:
         }
     }
     void concat() {
-    node *head1 = NULL,*head2=NULL;
+    node *head1 = NULL,*head2=NULL,*head=NULL;
     cout<<"FIRST GROUP:"<<endl;
     insert_president();
     insert_member();
-    
-
+    head1 = head;
+    cout<<"SECOND GROUP:"<<endl;
+    insert_president();
+    insert_member();
+    head2=head;
+    temp=head1;
+    while(temp->next!=NULL){
+        temp=temp->next;
+    }
+    temp->next=head2;
+    head = head1;
     }
 };
 
@@ -163,7 +172,7 @@ int main() {
             break;
         case 8:cout << "\n"; 
             obj.concat();
-            cout << "\n";
+            obj.display();
             goto repeat;
             break;
         case 9:choice = 10;;
