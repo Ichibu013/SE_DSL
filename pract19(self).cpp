@@ -116,8 +116,8 @@ int main() {
     int choice = 0;
     list obj;
     cout << "Perform the following operations:\n\t1]Add President\n\t2]Add Members\n\t3]Display All Members";
-    cout << "\n\t4]Count all members\n\t5]Delete President\n\t6]Delete Secretary\n\t7]Delete a member\n\t8]Reverse the list";
-    cout << "\n\t9]Concat 2 lists\n\t10]End" << endl;
+    cout << "\n\t4]Count all members\n\t5]Delete President\n\t6]Delete Secretary\n\t7]Delete a member";
+    cout << "\n\t8]Concat 2 lists\n\t9]End" << endl;
     repeat:
     cout << "Select choice:"; cin >> choice; 
     switch (choice) {
@@ -158,18 +158,13 @@ int main() {
             obj.display();
             cout << "\n";
             goto repeat;
-            break;
+            break;
         case 8:cout << "\n"; 
-            obj.reverse();
-            cout << "\n";
-            goto repeat;
-            break;
-        case 9:cout << "\n"; 
             obj.concat();
             cout << "\n";
             goto repeat;
             break;
-        case 10:choice = 10;;
+        case 9:choice = 10;;
             break;
         default:
             cout << "\n";
